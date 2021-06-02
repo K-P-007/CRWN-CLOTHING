@@ -1,7 +1,9 @@
 import React from "react";
+import { IMAGES } from "../../assets";
 import MenuItem from "../Menu-Item/Menu-Item.component";
 import "./directory.styles.scss";
 
+console.log(IMAGES);
 class Directory extends React.Component {
   constructor() {
     super();
@@ -9,37 +11,32 @@ class Directory extends React.Component {
       sections: [
         {
           title: "hats",
-          imageUrl:
-            "https://forever21.imgix.net/img/app/product/5/503793-3785892.jpg?w=412&auto=format",
+          imageUrl: IMAGES.LandingPage_Hat,
           id: 1,
           linkUrl: "shop/hats",
         },
         {
           title: "jackets",
-          imageUrl:
-            "https://images.pexels.com/photos/887898/pexels-photo-887898.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          imageUrl: IMAGES.LandingPage_Jackets,
           id: 2,
           linkUrl: "shop/jackets",
         },
         {
           title: "sneakers",
-          imageUrl:
-            "https://goop-img.com/wp-content/uploads/2021/03/The-Spring-2021-Sneaker-Guide_anouk-1.jpg",
+          imageUrl: IMAGES.LandingPage_Sneakers,
           id: 3,
           linkUrl: "shop/sneakers",
         },
         {
           title: "womens",
-          imageUrl:
-            "https://cdn.muscleandstrength.com/sites/default/files/styles/800x500/public/5_day_womens_dumbbell_workout_-_1200x630.jpg?itok=9FiVclc5",
+          imageUrl: IMAGES.LandingPage_Womens,
           size: "large",
           id: 4,
           linkUrl: "shop/womens",
         },
         {
           title: "mens",
-          imageUrl:
-            "https://www.qarotmen.com/uploads/qarot/slideshows/hot-mobile-492416_m.jpg?v=1",
+          imageUrl: IMAGES.LandingPage_Men,
           size: "large",
           id: 5,
           linkUrl: "shop/mens",
