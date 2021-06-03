@@ -17,7 +17,6 @@ export default class SignIn extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this);
     this.setState({ email: "", password: "" });
   };
 
