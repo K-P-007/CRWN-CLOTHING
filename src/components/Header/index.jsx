@@ -8,7 +8,7 @@ import CartDropdown from "../CartDropdown";
 
 import "./Header.styles.scss";
 
-const Header = ({ currentUser, isCartVisible }) => {
+const Header = ({ currentUser, isCartHidden }) => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
@@ -32,7 +32,7 @@ const Header = ({ currentUser, isCartVisible }) => {
         )}
         <CartIcon />
       </div>
-      {isCartVisible ? <CartDropdown /> : null}
+      {!isCartHidden ? <CartDropdown /> : null}
     </div>
   );
 };
@@ -40,7 +40,7 @@ const Header = ({ currentUser, isCartVisible }) => {
 const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => {
   return {
     currentUser: currentUser,
-    isCartVisible: hidden,
+    isCartHidden: hidden,
   };
 };
 
