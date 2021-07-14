@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import StripeCheckout from "react-stripe-checkout";
 import StripeImage from "../../assets/icons/payment.svg";
 
@@ -8,7 +9,19 @@ const StripeCheckoutButton = ({ price }) => {
 
   const onToken = (token) => {
     console.log(token);
-    alert("Payment Successfull");
+    axios({
+      url: "payment",
+      method: "post",
+      data: {
+        amount: priceForStripe,
+        token,
+      },
+    })
+      .then((response) => alert("Payment Successfull"))
+      .catch((error) => {
+        console.log("Payment error:", JSON.parse(error));
+        alert("There was issue with your payment");
+      });
   };
   return (
     <StripeCheckout
